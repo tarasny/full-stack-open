@@ -1,31 +1,53 @@
 import React from 'react'
 
-const Part = (props) => {
+const Content = (props) => {
   return (
   <>
-    <p>{props.part} has {props.exercises} exercises</p>
+    {props.parts.map((part) => 
+      <p>{part.name} has {part.exercises} exercises</p>
+    )}
   </>
   )
 }
+const Header = (props) => {
+  return (
+    <>
+      <h1>{props.course}</h1>
+    </>
+  )
+}
+const Total = (props) => {
+  var total = 0
+  return (
+    <>
+      <p hidden> {props.parts.map((part) => 
+        total += part.exercises)}</p>
+      <p>Number of exercises {total}</p>
+    </>
+  )
+}
 const App = () => {
-  const course = 'Half stack applicatoin development'
-  const part1 = {
-    name: 'Fundamentals of React',
-    exercises: 10
-  }
-  const part2 = {
-    name: 'Using props to pass data',
-    exercises: 7
-  }
-  const part3 = {
-    name: 'State of a component',
-    exercises: 14
-  }
+  let total = 0
+  const course = 'Half stack application development'
+  const parts = [
+    {
+      name: 'Fundamentals of React',
+      exercises: 10
+    },
+    {
+      name: 'Using props to pass data',
+      exercises: 7
+    },
+    {
+      name: 'State of a component',
+      exercises: 14
+    }
+  ]
   return (
     <div>
-      <Part part={part1.name} exercises={part1.exercises} />
-      <Part part={part2.name} exercises={part2.exercises} />
-      <Part part={part3.name} exercises={part3.exercises} />
+      <Header course={course}/>
+      <Content parts={parts}/>
+      <Total parts={parts}/>
     </div>
   )
 }
