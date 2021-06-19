@@ -7,7 +7,7 @@ const Button = ({handleClick, text}) => (
 const Statistics = ({text, value}) => {  
   return (
     <tr>
-      <td>{text}</td> <td>{(!isNaN(parseFloat(value)))? (value) : ''}</td>
+      <td>{text}</td><td>{(!isNaN(parseFloat(value)))? (value) : ''}</td>
     </tr>
   )
 }
@@ -27,21 +27,18 @@ const App = () => {
       <Button handleClick={() => {setNeutral(neutral + 1); setCount(count + 1)}} text='Neutral' />
       <Button handleClick={() => {setBad(bad + 1); setScore(score - 1); setCount(count + 1)}} text='Bad' />
       <h2>Statistics</h2>
-      <p>{count? 
+      <table><tbody>{count? 
         (
-          <table>
-            <tbody>  
+            <>  
                 <Statistics text='Good' value={good}></Statistics>
                 <Statistics text='Neutral' value={neutral}></Statistics>
                 <Statistics text='Bad' value={bad}></Statistics>
                 <Statistics text='All' value={count}></Statistics>
                 <Statistics text='Average' value={average}></Statistics>
                 <Statistics text='Positive' value={positive}></Statistics>
-            </tbody>
-
-          </table>
+            </>
       ) 
-          : 'No feedback given' } </p>
+          : <tr><td>'No feedback given'</td></tr>}</tbody></table>
     </div>
   )
 }
