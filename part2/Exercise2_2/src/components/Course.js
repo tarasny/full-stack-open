@@ -4,12 +4,15 @@ const reducer = (accumulator, currentValue) => accumulator + currentValue.exerci
 
 
 const Content = ({props}) => {
-    return (
+  
+  const total = props.reduce(reducer,0)
+
+  return (
       <>
         {props.map(part => 
         <p key={part.id}>{part.name} {part.exercises}</p>)
     }
-        <p>There are {props.reduce(reducer, 0)} exercises</p>
+        <p>There are {total} exercises</p>
       </>
     )
   }
