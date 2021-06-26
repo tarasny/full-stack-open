@@ -17,7 +17,7 @@ const App = () => {
     setNewName('')
   }
 
-  const handleNoteChange = (event) => {
+  const handleNameChange = (event) => {
     console.log(event.target.value)
     setNewName(event.target.value)
   }
@@ -28,7 +28,7 @@ const App = () => {
       <form>
         <div>
           name: <input value={newName}
-                       onChange={handleNoteChange}
+                       onChange={handleNameChange}
                 />
         </div>
         <div>
@@ -38,7 +38,7 @@ const App = () => {
       <h2>Numbers</h2>
       <ul>
         {persons.map(person =>
-          <p key={person.name}>{person.name}</p>) 
+          <li key={person.name}>{person.name}</li>) 
         }
       </ul>
     </div>
