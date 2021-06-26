@@ -22,12 +22,10 @@ const App = () => {
   }
 
   const handleNameChange = (event) => {
-    console.log(event.target.value)
     setNewName(event.target.value)
   }
 
   const handleNumbChange = (event) => {
-    console.log(event.target.value)
     setNewNumb(event.target.value)
   }
 
