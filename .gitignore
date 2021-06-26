@@ -1,7 +1,7 @@
-<<<<<<< HEAD
 *.code-workspace
 /Tests
-=======
+/part2
+
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -25,4 +25,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
->>>>>>> 3eb558e2436356aa15411bdd130e13e28d9ae482
+
